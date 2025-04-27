@@ -23,7 +23,8 @@ const useGetCallById = (id: string | string[]) => {
 
           }
         };
-   
+
+      getCall();
 
     },[client, id]);
 
