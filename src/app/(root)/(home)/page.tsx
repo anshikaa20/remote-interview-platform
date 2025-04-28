@@ -4,11 +4,11 @@ import ActionCard from "@/components/ActionCard";
 import { QUICK_ACTIONS } from "@/constants";
 import { useUserRole } from "@/hooks/useUserRole";
 import { useQuery } from "convex/react";
-import { title } from "process";
 import { useState } from "react";
 import { api } from "../../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
 import MeetingModal from "@/components/MeetingModal";
+import LoaderUI from "@/components/LoaderUI";
 
 export default function Home() {
   const router = useRouter();
@@ -32,13 +32,9 @@ export default function Home() {
       default:
         router.push(`/${title.toLowerCase()}`);
     }
-
   };
 
-  if(isLoading) {
-    return  null; //<p>loading...</p>
-  } 
-  
+ if (isLoading) return <LoaderUI />; 
   
   return <div className='container max-w-7xl mx-auto p-6'>
     {/*WELCOME SECTION*/}
