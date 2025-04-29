@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { Doc } from "../../convex/_generated/dataModel";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 type Interview = Doc<"interviews">;
